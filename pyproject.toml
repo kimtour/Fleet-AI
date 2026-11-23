@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fleet-copilot"
+version = "1.0.0"
+readme = "README.md"
+description = "Evidence-grounded, tenant-scoped Fleet Copilot with human-approved actions"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+langgraph = ["langgraph>=1.0,<2"]
+
+[tool.ruff]
+line-length = 140
+
+[project.scripts]
+fleet-copilot = "fleet_copilot.__main__:cli"
+
+[tool.setuptools.packages.find]
+include = ["fleet_copilot*"]     # eval/ and tests/ are repo tooling, not part of the installable package
+
+[tool.setuptools.package-data]
+fleet_copilot = ["resources/*.ndjson"]
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]

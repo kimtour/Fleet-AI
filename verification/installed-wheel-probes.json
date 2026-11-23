@@ -1,0 +1,38 @@
+{
+  "source_files_match_wheel": true,
+  "outside_source_tree": true,
+  "bundled_dataset": "passed",
+  "console_broken_pipe": "passed",
+  "probes": [
+    {
+      "question": "Show screen lock failures over time",
+      "status": "answered",
+      "proposals": 0
+    },
+    {
+      "question": "Notify employees about disk encryption failures",
+      "status": "answered",
+      "proposals": 0
+    },
+    {
+      "question": "Order a -4TB disk for 8NM23J95R5I6",
+      "status": "refused",
+      "proposals": 0
+    },
+    {
+      "question": "Order a 4TB disk for 8NM23J95R5I6",
+      "status": "answered",
+      "proposals": 1
+    },
+    {
+      "question": "Show disks below 20 percent free",
+      "status": "answered",
+      "proposals": 0
+    },
+    {
+      "question": "Show disk with more than 20% free",
+      "status": "refused",
+      "proposals": 0
+    }
+  ]
+}

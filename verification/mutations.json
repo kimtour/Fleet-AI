@@ -1,0 +1,36 @@
+{
+  "baseline_passed": true,
+  "faults": [
+    {
+      "fault": "no_tenant_isolation",
+      "caught": true,
+      "exit_code": 1
+    },
+    {
+      "fault": "policy_allows_all",
+      "caught": true,
+      "exit_code": 1
+    },
+    {
+      "fault": "auto_execute_on_propose",
+      "caught": true,
+      "exit_code": 1
+    },
+    {
+      "fault": "fake_citations",
+      "caught": true,
+      "exit_code": 1
+    },
+    {
+      "fault": "no_audit_chain",
+      "caught": true,
+      "exit_code": 1
+    },
+    {
+      "fault": "tenant_args_accepted",
+      "caught": true,
+      "exit_code": 1
+    }
+  ],
+  "restored_baseline": true
+}

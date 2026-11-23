@@ -1,0 +1,14 @@
+state/
+__pycache__/
+*.pyc
+eval/report.*
+
+.venv/
+build/
+dist/
+*.egg-info/
+*.db
+*.db-journal
+.env
+
+repository.bundle
