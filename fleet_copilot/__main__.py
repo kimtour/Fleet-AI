@@ -86,7 +86,10 @@ def cli():
         result = main()
         sys.stdout.flush()  # Catch small buffered writes before interpreter shutdown.
         return result
-    except BrokenPipeError:
+    except OSError as exc:
+        import errno
+        if not isinstance(exc,BrokenPipeError) and not (sys.platform=='win32' and exc.errno in (errno.EINVAL,errno.EPIPE)):
+            raise
         import os
         try:
             fd=os.open(os.devnull,os.O_WRONLY)

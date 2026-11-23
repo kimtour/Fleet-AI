@@ -95,6 +95,11 @@ class V2AuditTests(unittest.TestCase):
             process.stderr.close()
             self.assertEqual(process.wait(timeout=20),0,err)
             self.assertNotIn('Traceback',err)
+        # Windows CRT reports a closed pipe as EINVAL rather than BrokenPipeError.
+        for error, expected in [(22,0),(5,1)]:
+            code=f"import sys; import fleet_copilot.__main__ as m; sys.platform='win32'; m.main=lambda: (_ for _ in ()).throw(OSError({error},'probe')); sys.exit(m.cli())"
+            result=subprocess.run([sys.executable,'-c',code],capture_output=True,text=True)
+            self.assertEqual(result.returncode,expected,result.stderr)
 
     def test_empty_trend_subset_is_citable_and_does_not_crash(self):
         view=self.data.view('acme-001')
