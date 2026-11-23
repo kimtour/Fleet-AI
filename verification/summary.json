@@ -9,9 +9,8 @@
   "wheel_build": "passed",
   "isolated_installed_wheel_with_bundled_dataset": "passed",
   "live_llm_calls": "not verified - credentials unavailable",
-  "windows_linux_ci": "configured, not executed locally",
+  "windows_linux_ci": "GitHub Actions: https://github.com/kimtour/Fleet-AI/actions/workflows/checks.yml",
   "dataset_sha256": "fb0ee31ffeeb731b919fc4d5124098c9c5b68cf3fba35eed5092a9f73655c4de",
-  "revalidated": "independent audit of latest incoming bundle; action target and criterion filters, expired review generations, direct evidence validation, numeric and record validation, provider boundary",
   "mocked_provider_contracts": "5 passed; no network",
-  "independent_retest": "V2 filter-fidelity, negation, console pipe, scoped trend and order-capacity checks; native and LangGraph verified locally"
+  "project": "Fleet AI"
 }

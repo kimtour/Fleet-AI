@@ -134,7 +134,7 @@ Reports are in `verification/`. Synthetic tests cover boundaries and adversarial
 
 The optional adapter requires `ANTHROPIC_API_KEY` and `FLEET_COPILOT_MODEL`, then `--planner llm`. Only questions, policy instructions, and the read-tool catalog are sent to the provider. Telemetry stays local. Missing configuration, timeouts, invalid JSON, or attempted action tools fall back to deterministic planning. Model-selected parameters remain visible in the answer and assumptions.
 
-**Live provider calls and remote CI execution are unverified.** Mocked HTTP tests check the adapter contract; they do not measure live model quality. CI is configured for native tests on Linux, macOS, and Windows, plus a LangGraph job.
+**Live provider calls remain unverified.** Mocked HTTP tests check the adapter contract; they do not measure live model quality. GitHub Actions runs native checks on Linux, macOS, and Windows, plus a LangGraph job. The badge above links to the current results.
 
 Hardware compatibility is an explicit external policy assumption, not a telemetry fact. Upgrade specifications are sizing reviews rather than vendor SKUs. A real execution adapter needs independent hardware validation, fresh telemetry, authenticated approvals, and external idempotency. Installed-software risk scoring, real operational integrations, and persistent conversational memory are outside the current implementation.
 

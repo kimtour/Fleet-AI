@@ -88,7 +88,7 @@ def cli():
         return result
     except OSError as exc:
         import errno
-        if not isinstance(exc,BrokenPipeError) and not (sys.platform=='win32' and exc.errno in (errno.EINVAL,errno.EPIPE)):
+        if not isinstance(exc,BrokenPipeError) and not (sys.platform=='win32' and exc.filename is None and exc.errno in (errno.EINVAL,errno.EPIPE)):
             raise
         import os
         try:

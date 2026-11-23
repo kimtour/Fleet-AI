@@ -100,6 +100,9 @@ class V2AuditTests(unittest.TestCase):
             code=f"import sys; import fleet_copilot.__main__ as m; sys.platform='win32'; m.main=lambda: (_ for _ in ()).throw(OSError({error},'probe')); sys.exit(m.cli())"
             result=subprocess.run([sys.executable,'-c',code],capture_output=True,text=True)
             self.assertEqual(result.returncode,expected,result.stderr)
+        code="import sys; import fleet_copilot.__main__ as m; sys.platform='win32'; m.main=lambda: (_ for _ in ()).throw(OSError(22,'invalid file','invalid-path')); sys.exit(m.cli())"
+        result=subprocess.run([sys.executable,'-c',code],capture_output=True,text=True)
+        self.assertNotEqual(result.returncode,0)
 
     def test_empty_trend_subset_is_citable_and_does_not_crash(self):
         view=self.data.view('acme-001')
